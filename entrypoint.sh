@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
-NAME="itsjohannawren/alpine-mirror-http"
+NAME="alpine-mirror-http"
 TITLE="Alpine Mirror"
 SUBTITLE="HTTP"
 AUTHOR="Johanna Walter"
 AUTHOR_EMAIL="johanna@walter.fm"
 AUTHOR_DOCKER="itsjohannawren"
+AUTHOR_GITHUB="itsjohannawren"
 
 # ==============================================================================
 
@@ -95,7 +96,8 @@ fi
 echo   '/______________________________________________/ /____/   /__/'
 echo -ne $'\x1b[0m'
 echo
-echo   "    https://hub.docker.com/u/${AUTHOR_DOCKER}"
+echo   "    https://hub.docker.com/u/${AUTHOR_DOCKER}/${NAME}"
+echo   "    https://github.com/${AUTHOR_GITHUB}/${NAME}"
 echo   "    ${AUTHOR} <${AUTHOR_EMAIL}>"
 separator
 
