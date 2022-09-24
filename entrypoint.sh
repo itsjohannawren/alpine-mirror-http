@@ -154,9 +154,42 @@ if [ ! -e /data/alpine ]; then
 	else
 		fatal "Failed to create /data/alpine"
 	fi
+
+	info "Setting ownership of /data/alpine"
+	if chown nobody:root /data/alpine &>/dev/null; then
+		notice "Set ownership of /data/alpine"
+	else
+		fatal "Failed to set ownership of /data/alpine"
+	fi
+
+	info "Setting permissions on /data/alpine"
+	if chmod 775 /data/alpine &>/dev/null; then
+		notice "Set permissions on /data/alpine"
+	else
+		fatal "Failed to set permissions on /data/alpine"
+	fi
 elif [ ! -d /data/alpine ]; then
 	fatal "/data/alpine exists but is not a directory"
 fi
+outdent
+
+info "/logs"
+indent
+{
+	info "Setting ownership of /logs"
+	if chown nobody:root /logs &>/dev/null; then
+		notice "Set ownership of /logs"
+	else
+		fatal "Failed to set ownership of /logs"
+	fi
+
+	info "Setting permissions on /logs"
+	if chmod 775 /logs &>/dev/null; then
+		notice "Set permissions on /logs"
+	else
+		fatal "Failed to set permissions on /logs"
+	fi
+}
 outdent
 
 outdent
